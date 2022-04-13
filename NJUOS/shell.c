@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     if(redirect_stdout)
     {
       int fd = open(/*a.txt*/); // 假如fd = 3
-      // 由于dup2在execve之前执行的，也就是说文件的重定向在execve之前
+      // 由于dup2在execve之前执行的，也就是说文件的重定向在execve(echo)之前，sudo针对echo有效
       // 所以重定向的文件的权限不是root，因此就算加上sudo也会出现permission denied
       dup2(fd, STDOUT_FILENO); // 这个函数会让fd = 1的文件描述符指向a.txt
       close(fd); // close(3)
