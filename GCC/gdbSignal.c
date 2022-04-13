@@ -11,7 +11,7 @@ void handler(int sig)
 }
 
 int main(void) {
-  signal(SIGHUP, handler);
+  signal(SIGHUP, handler); // CTRl + c 触发，gdb用catch signal捕获
 
   while (1)
   {
