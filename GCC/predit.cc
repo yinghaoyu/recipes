@@ -2,6 +2,7 @@
 #include <ctime>
 #include <iostream>
 
+// 分支指令预测
 int main()
 {
     // 随机产生整数，用分区函数填充，以避免出现分桶不均
