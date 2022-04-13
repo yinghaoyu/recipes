@@ -12,7 +12,7 @@ int main(void)
   {
     perror("fork()");
   }
-  if(pid == 0)
+  if(pid == 0)  // gdb 用info inferiors查看所有进程
   {
     printf("this is child,pid = %d\n",getpid());
   }
