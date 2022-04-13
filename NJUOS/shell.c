@@ -6,8 +6,8 @@
 // 以下为shell的伪代码
 int main(int argc, char* argv[])
 {
-  const char* filename = "test";
-  const char* envp = "test";
+  const char* filename = "a.txt";
+  const char* envp = "a.txt";
   bool redirect_stdout = true;
   bool redirect_stderr = false;
   bool bg = true;
@@ -17,11 +17,11 @@ int main(int argc, char* argv[])
   {
     if(redirect_stdout)
     {
-      int fd = open();
+      int fd = open(/*a.txt*/); // 假如fd = 3
       // 由于dup2在execve之前执行的，也就是说文件的重定向在execve之前
       // 所以重定向的文件的权限不是root，因此就算加上sudo也会出现permission denied
-      dup2(fd, STDOUT_FILENO);
-      close(fd);
+      dup2(fd, STDOUT_FILENO); // 这个函数会让fd = 1的文件描述符指向a.txt
+      close(fd); // close(3)
     }
     if(redirect_stderr)
     {
