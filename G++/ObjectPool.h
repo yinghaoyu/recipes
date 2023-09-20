@@ -37,7 +37,7 @@ namespace object_pool
     }  // namespace disabled
 }  // namespace object_pool
 
-// @sa https://github.com/Tencent/flare
+// @sa https://github.com/Tencent/flare/blob/master/flare/doc/object-pool.md
 enum PoolType
 {
     // Do not use object pool at all.
@@ -264,8 +264,8 @@ namespace object_pool
             }
         };
 
-        const int kMinimumFreePerWash = 32;
-        const int kMinimumWashInterval = 5;  // ms
+        const size_t kMinimumFreePerWash = 32;
+        const size_t kMinimumWashInterval = 5;  // ms
 
         // @sa https://blog.csdn.net/Timeinsist/article/details/115456182
         ULL GetCurrentTimestamp()
