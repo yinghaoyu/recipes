@@ -27,7 +27,7 @@ template <typename T>
 Bar(T) -> Bar<std::decay_t<T>>;
 
 int main() {
-    // Foo foo{"hello"};  // 这句会报错
+    //Foo foo{"hello"};  // 这句会报错
     Bar bar{"hello"};
 }
 
