@@ -1,6 +1,7 @@
 #include <coroutine>
 #include <iostream>
 
+// https://developer.aliyun.com/article/1490099
 template <bool READY> struct Awaiter {
     bool await_ready() noexcept {
         std::cout << "await_ready: " << READY << std::endl;
